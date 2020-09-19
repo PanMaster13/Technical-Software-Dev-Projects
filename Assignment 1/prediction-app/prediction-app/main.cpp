@@ -143,7 +143,7 @@ int main() {
 
 		// User retry option
 		do {
-			cout << "Would you like to try again? (Yes/No): ";
+			cout << "\nWould you like to try again? (Yes/No): ";
 			cin >> retry;
 			// Coverts input into lowecase
 			transform(retry.begin(), retry.end(), retry.begin(), ::tolower);
