@@ -9,6 +9,7 @@ int main() {
 	int age;
 	double weight, height, bmi;
 	string diabetes, gender, race, retry = "";
+	bool isAdmission = false;
 
 	while (retry != "no") {
 		// Input validation for Age
@@ -104,17 +105,45 @@ int main() {
 		// Calculate BMI
 		bmi = weight / pow(height, 2.0);
 
-		cout << "\nAge: " << age << endl;
-		cout << "Weight: " << weight << endl;
-		cout << "Height: " << height << endl;
-		cout << "Has diabetes?: " << diabetes << endl;
-		cout << "Gender: " << gender << endl;
-		cout << "Race: " << race << endl;
-		cout << "BMI: " << bmi << endl;
+		// Checking admission
+		if (age > 65) {
+			isAdmission = true;
+		} else if (bmi > 40) {
+			if (age > 35) {
+				isAdmission = true;
+			}
+			else if (gender == "male") {
+				isAdmission = true;
+			}
+			else {
+				isAdmission = false;
+			}
+		} else if (age >= 20 && age <= 44) {
+			isAdmission = false;
+		} else if (gender == "male") {
+			if (diabetes == "yes") {
+				isAdmission = true;
+			} else if (race == "white") {
+				isAdmission = false;
+			} else {
+				isAdmission = true;
+			}
+		} else if (diabetes == "yes") {
+			isAdmission = true;
+		} else {
+			isAdmission = false;
+		}
+
+		// Display Admission or No Admission
+		if (isAdmission) {
+			cout << "You have admission." << endl;
+		} else {
+			cout << "You do not have admission." << endl;
+		}
 
 		// User retry option
 		do {
-			cout << "Would you like to try again?: ";
+			cout << "Would you like to try again? (Yes/No): ";
 			cin >> retry;
 			// Coverts input into lowecase
 			transform(retry.begin(), retry.end(), retry.begin(), ::tolower);
