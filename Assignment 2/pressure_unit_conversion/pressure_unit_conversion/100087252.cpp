@@ -10,6 +10,7 @@ Program Description: Program that performs pressure unit conversions
 #include <vector>
 #include <sstream>
 #include <regex>
+#include <iomanip>
 
 using namespace std;
 
@@ -29,10 +30,21 @@ vector<ArrayType> stringToArray(string input) {
 	return array;
 }
 
+// Function that calculates based on input provided and generates conversion table
 void createConversionTable(vector<string> measurement_array, vector<string> value_array, float increment) {
-	float current_value = 0;
-	for (current_value = stof(value_array[0]); current_value <= stof(value_array[1]); current_value += increment) {
-		string table_output = to_string(current_value);
+
+	// Creates table title
+	cout << "psi";
+	for (int i = 0; i < measurement_array.size(); i++) {
+		cout << setw(10);
+		cout << measurement_array[i];
+	}
+	cout << endl;
+
+	// Creates table content
+	for (float current_value = stof(value_array[0]); current_value <= stof(value_array[1]); current_value += increment) {
+		// Formats the currenct value output to 3 decimal places
+		cout << setprecision(3) << fixed << current_value;
 		for (int i = 0; i < measurement_array.size(); i++) {
 			float multiplier = 0, result = 0;
 			// String values cannot be applied to switch case notations, if-else is used instead
@@ -58,23 +70,28 @@ void createConversionTable(vector<string> measurement_array, vector<string> valu
 				multiplier = 704.281;
 			}
 			result = current_value * multiplier;
-			table_output = table_output + "    " + to_string(result);
+			// Sets a width of 10
+			cout << setw(10);
+			cout << result;
 		}
-		cout << table_output << endl;
+		cout << endl;
 	}
 }
 
 int main() {
-	string measurements, values, table_title = "psi";
+	string measurements, values;
 	float increment;
 	vector<string> measurement_array, value_array;
-
 	bool measurement_is_wrong = true, value_is_wrong = true, increment_is_wrong = true;
+
+	// Program Title
 	cout << "Pressure Unit Conversion Table" << endl;
+
 	// Input Validation for measurement unit(s) selected
 	do {
 		cout << "Choose one or more measurement unit(s) as the converted pressure units: ATM, inH2O, mmHg, inHg, kPa, bar, mmH2O (separated with a space if more than one): ";
 		getline(cin, measurements);
+		// Converts input into string vector
 		measurement_array = stringToArray<string>(measurements);
 		for (int i = 0; i < measurement_array.size(); i++) {
 			if (measurement_array[i] == "ATM" || measurement_array[i] == "inH2O" || measurement_array[i] == "mmHg" || measurement_array[i] == "inHg" || measurement_array[i] == "kPa" || measurement_array[i] == "bar" || measurement_array[i] == "mmH2O") {
@@ -93,6 +110,7 @@ int main() {
 	do {
 		cout << "Enter the starting value and ending value for primary unit in psi (separated with a space): ";
 		getline(cin, values);
+		// Converts input into string vector
 		value_array = stringToArray<string>(values);
 		if (value_array.size() == 2) {
 			if ((regex_match(value_array[0], regex("[+-]?([0-9]*[.])?[0-9]+"))) && (regex_match(value_array[1], regex("[+-]?([0-9]*[.])?[0-9]+")))) {
@@ -117,10 +135,7 @@ int main() {
 		}
 	} while (increment_is_wrong);
 
-	for (int i = 0; i < measurement_array.size(); i++) {
-		table_title = table_title + "    " + measurement_array[i];
-	}
-	cout << table_title << endl;
+	// Calls function to generate conversion table
 	createConversionTable(measurement_array, value_array, increment);
 
 	return 0;

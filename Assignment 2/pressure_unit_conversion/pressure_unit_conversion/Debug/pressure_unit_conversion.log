@@ -1,12 +1,12 @@
 ﻿  100087252.cpp
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(36,21): warning C4018: '<': signed/unsigned mismatch
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(40,26): warning C4305: '=': truncation from 'double' to 'float'
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(43,25): warning C4305: '=': truncation from 'double' to 'float'
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(46,24): warning C4305: '=': truncation from 'double' to 'float'
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(49,25): warning C4305: '=': truncation from 'double' to 'float'
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(52,23): warning C4305: '=': truncation from 'double' to 'float'
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(38,20): warning C4018: '<': signed/unsigned mismatch
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(48,21): warning C4018: '<': signed/unsigned mismatch
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(52,26): warning C4305: '=': truncation from 'double' to 'float'
 F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(55,25): warning C4305: '=': truncation from 'double' to 'float'
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(58,25): warning C4305: '=': truncation from 'double' to 'float'
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(85,21): warning C4018: '<': signed/unsigned mismatch
-F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(126,20): warning C4018: '<': signed/unsigned mismatch
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(58,24): warning C4305: '=': truncation from 'double' to 'float'
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(61,25): warning C4305: '=': truncation from 'double' to 'float'
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(64,23): warning C4305: '=': truncation from 'double' to 'float'
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(67,25): warning C4305: '=': truncation from 'double' to 'float'
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(70,25): warning C4305: '=': truncation from 'double' to 'float'
+F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\pressure_unit_conversion\100087252.cpp(96,21): warning C4018: '<': signed/unsigned mismatch
   pressure_unit_conversion.vcxproj -> F:\Technical-Software-Dev-Projects\Assignment 2\pressure_unit_conversion\Debug\pressure_unit_conversion.exe
