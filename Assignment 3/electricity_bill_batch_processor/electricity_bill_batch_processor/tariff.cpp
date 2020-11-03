@@ -1,4 +1,4 @@
-//#include "tariff.h"
+#include "tariff.h"
 
 /**
  * Calculate monthly electricity charge at domestic rate based on units consumed
@@ -6,6 +6,7 @@
  * @param unitsConsumed - the number of units in kwh consumed in current month
  * @return charge - calculated charge, minimum 5.00
  */
+
 double getMonthlyChargeDomestic(double unitsConsumed)
 {
 	double charge;
