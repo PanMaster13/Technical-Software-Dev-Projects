@@ -2,7 +2,7 @@
 Name: Jason Ang Chia Wuen
 Student ID: 100087252
 Date: 6/10/2020
-Program Description: Program that performs pressure unit conversions
+Program Description: Program that performs aviation speed unit conversions
 */
 
 #include <iostream>
@@ -34,7 +34,7 @@ vector<ArrayType> stringToArray(string input) {
 void createConversionTable(vector<string> measurement_array, vector<string> value_array, float increment) {
 
 	// Creates table title
-	cout << "psi";
+	cout << "knots";
 	for (int i = 0; i < measurement_array.size(); i++) {
 		cout << setw(10);
 		cout << measurement_array[i];
@@ -48,26 +48,14 @@ void createConversionTable(vector<string> measurement_array, vector<string> valu
 		for (int i = 0; i < measurement_array.size(); i++) {
 			float multiplier = 0, result = 0;
 			// String values cannot be applied to switch case notations, if-else is used instead
-			if (measurement_array[i] == "ATM") {
-				multiplier = 0.068046;
+			if (measurement_array[i] == "km/h") {
+				multiplier = 1.852;
 			}
-			else if (measurement_array[i] == "inH2O") {
-				multiplier = 27.7276;
+			else if (measurement_array[i] == "m/s") {
+				multiplier = 0.514444;
 			}
-			else if (measurement_array[i] == "mmHg") {
-				multiplier = 51.715;
-			}
-			else if (measurement_array[i] == "inHg") {
-				multiplier = 2.03602;
-			}
-			else if (measurement_array[i] == "kPa") {
-				multiplier = 6.895;
-			}
-			else if (measurement_array[i] == "bar") {
-				multiplier = 0.06895;
-			}
-			else if (measurement_array[i] == "mmH2O") {
-				multiplier = 704.281;
+			else if (measurement_array[i] == "mph") {
+				multiplier = 1.15078;
 			}
 			result = current_value * multiplier;
 			// Sets a width of 10
@@ -85,16 +73,16 @@ int main() {
 	bool measurement_is_wrong = true, value_is_wrong = true, increment_is_wrong = true;
 
 	// Program Title
-	cout << "Pressure Unit Conversion Table" << endl;
+	cout << "Aviation Speed Unit Conversion Table" << endl;
 
 	// Input Validation for measurement unit(s) selected
 	do {
-		cout << "Choose one or more measurement unit(s) as the converted pressure units: ATM, inH2O, mmHg, inHg, kPa, bar, mmH2O (separated with a space if more than one): ";
+		cout << "Choose one or more measurement unit(s) as the converted aviation speed units: km/h, m/s and mph (separated with a space if more than one): ";
 		getline(cin, measurements);
 		// Converts input into string vector
 		measurement_array = stringToArray<string>(measurements);
 		for (int i = 0; i < measurement_array.size(); i++) {
-			if (measurement_array[i] == "ATM" || measurement_array[i] == "inH2O" || measurement_array[i] == "mmHg" || measurement_array[i] == "inHg" || measurement_array[i] == "kPa" || measurement_array[i] == "bar" || measurement_array[i] == "mmH2O") {
+			if (measurement_array[i] == "km/h" || measurement_array[i] == "m/s" || measurement_array[i] == "mph") {
 				measurement_is_wrong = false;
 			}
 			else {
@@ -108,7 +96,7 @@ int main() {
 
 	// Input Validation for starting and ending value
 	do {
-		cout << "Enter the starting value and ending value for primary unit in psi (separated with a space): ";
+		cout << "Enter the starting value and ending value for primary unit in knots (separated with a space): ";
 		getline(cin, values);
 		// Converts input into string vector
 		value_array = stringToArray<string>(values);
